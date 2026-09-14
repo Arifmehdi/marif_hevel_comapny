@@ -1326,7 +1326,9 @@ ul{list-style:none;}
   font-size:42px;
   line-height:1.25;
   margin-bottom:26px;
-  white-space:nowrap;
+}
+@media (min-width:1100px){
+  .mission-copy .service-heading{white-space:nowrap;}
 }
 .mission-copy .service-text{
   font-size:16px;
@@ -2689,3 +2691,68 @@ ul{list-style:none;}
 .insight-section:has(+ .touch-section--spaced){
   padding-bottom:56px;
 }
+
+/* ---------- Responsive fixes ---------- */
+
+/* Stacked ceiling cards need room for the straddling info panel */
+@media (max-width:900px){
+  .ceiling-cards{row-gap:72px;}
+}
+
+/* Mission image shouldn't be forced right-aligned once stacked */
+@media (max-width:900px){
+  .mission-row .service-media img{margin-left:0;max-width:100%;}
+}
+
+/* Hero: let height follow content on tablet/mobile so the strip sits at the bottom */
+@media (max-width:1100px){
+  .hero-section{min-height:auto;}
+}
+
+/* Breadcrumb banner: tighter on small screens */
+@media (max-width:600px){
+  .breadcrumb-heading{font-size:30px;}
+  .breadcrumb-text,
+  .breadcrumb-meta{font-size:14px;}
+  .breadcrumb-eyebrow span:last-child{font-size:13px;letter-spacing:2px;}
+}
+
+/* Navbar on small screens */
+@media (max-width:640px){
+  .navbar{padding:14px 20px;}
+  .logo img{height:38px;}
+  .nav-links{gap:2px;}
+  .nav-links li a{height:40px;font-size:14px;padding:4px 10px;}
+}
+
+/* Section headings scale down on phones */
+@media (max-width:600px){
+  .hero-copy h1{font-size:30px;line-height:38px;}
+  .solution-heading{font-size:24px;}
+  .audience-heading{font-size:25px;}
+  .nlg-heading{font-size:25px;}
+  .touch-heading{font-size:26px;}
+  .article-heading{font-size:21px;}
+  .sec-title{font-size:23px;}
+  .contact-heading{font-size:25px;}
+  .details-heading{font-size:25px;}
+  .roadmap-heading{font-size:21px;}
+  .insight-card-body h3{font-size:19px;}
+  .founder-name{font-size:21px;}
+}
+
+/* Buttons shouldn't overflow narrow phones */
+@media (max-width:420px){
+  .btn-primary{font-size:14px;padding:12px 16px;white-space:normal;}
+  .insight-tab{font-size:13px;padding:12px 14px;white-space:normal;}
+}
+
+/* Logo links */
+.logo a,
+.footer-logo a{
+  display:inline-block;
+  line-height:0;
+  transition:opacity .2s ease;
+}
+.logo a:hover,
+.footer-logo a:hover{opacity:.85;}
